@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="project">
+      <div id="insert">
+        <div class="key">Press the key and wath magic</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const button = document.getElementById("insert");
+
+    window.addEventListener("keydown",(e)=>{
+        button.innerHTML = `
+    <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+        <td> ${e.key === ' '? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+    `;
+    });
+  </script>
+</html>

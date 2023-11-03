@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Asyncoronous Projects</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let checkInterval = false;
+
+    const startTask = function () {
+      console.log("I am learning js and react");
+    };
+
+
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+
+    start.addEventListener("click", function () {
+        if(!checkInterval){
+            console.log(checkInterval);
+            stoppInterval = setInterval(startTask, 1000);
+            checkInterval = true;
+        }
+    });
+
+    stop.addEventListener("click", function () {
+        if(checkInterval){
+           clearInterval(stoppInterval)
+           checkInterval = false;
+        }
+    });
+  </script>
+</html>
